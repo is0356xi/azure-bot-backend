@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Azure-Bot-Test-App
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Flask on local server 
+  - url: http://localhost:8000
+    description: Docker on local server
+
+paths:
+  /api/chat:
+    post:
+      summary: Chat with OpenAI API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Chat response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+
+components:
+  schemas:
+    ChatRequest:
+      type: object
+      properties:
+        userId:
+          type: string
+        message:
+          type: string
+      required:
+        - userId
+        - message
+    ChatResponse:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message

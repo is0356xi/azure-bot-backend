@@ -1,0 +1,8 @@
+version: '3'
+services:
+  azure-bot-backend:
+    image: azure-bot-backend
+    ports:
+      - "8000:5000"
+    volumes:
+      - ./.env:/.env

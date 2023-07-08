@@ -1,0 +1,6 @@
+container_envs = {
+    OPENAI_API_KEY=
+    OPENAI_API_BASE=
+    AZURE_OPENAI_DEPLOYMENT_NAME="gpt-35-turbo"
+    AZURE_OPENAI_API_VERSION="2023-03-15-preview"
+}
